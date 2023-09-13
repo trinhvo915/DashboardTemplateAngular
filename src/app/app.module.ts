@@ -3,14 +3,15 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppLayoutModule } from './layout/app.layout.module';
-import { NotfoundComponent } from './demo/components/notfound/notfound.component';
-import { ProductService } from './demo/service/product.service';
-import { CountryService } from './demo/service/country.service';
-import { CustomerService } from './demo/service/customer.service';
-import { EventService } from './demo/service/event.service';
-import { IconService } from './demo/service/icon.service';
-import { NodeService } from './demo/service/node.service';
-import { PhotoService } from './demo/service/photo.service';
+import { NotfoundComponent } from './pages/components/notfound/notfound.component';
+import { ProductService } from './pages/service/product.service';
+import { CountryService } from './pages/service/country.service';
+import { CustomerService } from './pages/service/customer.service';
+import { EventService } from './pages/service/event.service';
+import { IconService } from './pages/service/icon.service';
+import { NodeService } from './pages/service/node.service';
+import { PhotoService } from './pages/service/photo.service';
+import {OAuthModule} from "angular-oauth2-oidc";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { PhotoService } from './demo/service/photo.service';
     ],
     imports: [
         AppRoutingModule,
-        AppLayoutModule
+        AppLayoutModule,
+        OAuthModule.forRoot()
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
